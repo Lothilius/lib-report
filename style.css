@@ -1,0 +1,36 @@
+html{
+    background-color:#grey
+}
+
+body{
+    width: 70%;
+    margin: auto;
+    background-color:#D6D2C4;
+    font-family:sans-serif;
+}
+
+h3{
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+
+h4{
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+
+h3 + h4{
+    margin-top: 0px;
+}
+
+h3 + p{
+    margin-top: 0px;
+}
+
+h4 + p{
+    margin-top: 0px;
+}
+
+p{
+    margin-left: 5px;
+}
