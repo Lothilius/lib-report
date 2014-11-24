@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A Website by Lothilius </title>
+        <link rel="icon" type="image/png" href="../oi915_Tpurple.png">
+        <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+        <h1>Survey Form</h1>
+        <p>Please submit a text file with the following format</p>
+        <pre>
+                                            MISSING ITEMS
+
+              Produced Saturday, November 15, 2014 at 12:03 PM
+
+001.9 KRI                                2013
+      Personal Author: Krieger, Emily.
+                Title: Myths busted! : just when you thought you knew what
+                       you knew-- / by Emily Krieger ; illustrated by Tom
+                       Nick Cocotos.
+ copy:1       id:50127010148963      library:SANCHEZ      location:STACKS
+
+425 BLA                                  2014
+      Personal Author: Blaisdell, Bette.
+        </pre>
+        <p>etc...</p>
+        <form enctype="multipart/form-data" action="run_python.php" method="POST">
+            <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+            <table>
+                    <td>Choose file to upload</td>
+                    <td colspan="2"><input name="uploadedfile" type="file" /></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" value="Submit">Submit</button></td>
+                    <td><button type="reset" value="Reset">Reset</button>
+                </td>
+                </tr>
+            </table>
+        </form>
+        </br>
+        
+        <p> 
+            <a href="mailto:mars110110@aol.com">Martin A Valenzuela</a> 9-22-13
+        </p>
+	</body>
+</html>
