@@ -15,8 +15,8 @@
     echo "</pre>";
 
 //  Re-route to directory to download the file.
-    $domain = $_SERVER['HTTP_HOST'];
-    $path = implode("/",$fullPath);
-    $toLogin = 'http://'.$domain.$path."/out";
-    header('Location:'.$toLogin);
+//    $domain = $_SERVER['HTTP_HOST'];
+//    $path = implode("/",$fullPath);
+//    $toLogin = 'http://'.$domain.$path."/out";
+//    header('Location:'.$toLogin);
 ?>
