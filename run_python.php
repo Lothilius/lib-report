@@ -8,7 +8,7 @@
     $target = $dir.'In/'.$names;
     move_uploaded_file( $_FILES['uploadedfile']['tmp_name'], $target);
 
-    $command = escapeshellcmd("python read.py $target");
+    $command = escapeshellcmd("python2.7 read.py $target");
     $output = shell_exec($command);
     echo "<pre>";
     print_r($output);
