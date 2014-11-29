@@ -1,6 +1,6 @@
 <?php
     date_default_timezone_set('America/Chicago');
-    $dir = $_SERVER['HTTP_HOST']['DOCUMENT_ROOT'];
+    $dir = $_SERVER['DOCUMENT_ROOT'];
 
 
     $file = $_FILES['uploadedfile']['tmp_name'];
