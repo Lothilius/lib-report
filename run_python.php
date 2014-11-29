@@ -1,11 +1,12 @@
 <?php
     date_default_timezone_set('America/Chicago');
+    $dir = $_SERVER['HTTP_HOST']['DOCUMENT_ROOT'];
 
 
     $file = $_FILES['uploadedfile']['tmp_name'];
     $names = $_FILES['uploadedfile']['name'];
 
-    $target = 'In/'.$names;
+    $target = $dir.'In/'.$names;
     move_uploaded_file( $_FILES['uploadedfile']['tmp_name'], $target);
 
     $command = escapeshellcmd("python2.7 read.py $target");
