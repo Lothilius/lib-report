@@ -13,6 +13,7 @@
     $output = shell_exec($command);
     echo "<pre>";
     print_r($output);
+    echo '<a href="Out/inventory_report_.csv">Download Report</a>'
     echo "</pre>";
 
 //  Re-route to directory to download the file.
