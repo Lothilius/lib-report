@@ -50,7 +50,7 @@ def arrayTofile(dataArray, fileName):
         fileName = 'reports/' + fileName + '_' + current_time + '.csv'
     else:
         fileName = 'Out/' + fileName + current_time + '.csv'
-    print json.dumps({'file': fileName})
+    print fileName
     with open(fileName, 'w+') as csvfile:
         linewriter = csv.writer(csvfile, delimiter=",")
         for each in dataArray:
