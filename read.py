@@ -55,7 +55,7 @@ def arrayTofile(dataArray, fileName):
         linewriter = csv.writer(csvfile, delimiter=",")
         for each in dataArray:
             linewriter.writerow(each)
-    print("done")
+    # print("done")
 
 
 file_name = sys.argv[1]
