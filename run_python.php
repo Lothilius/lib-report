@@ -13,8 +13,8 @@
     exec($command, $output);
     echo "<pre>";
     echo "something";
-    echo $output;
-    echo '<a href="yup'.$output['file'].'">Download Report</a>';
+    echo $output[0];
+    echo '<a href="'.$output[0].'">Download Report</a>';
     echo "</pre>";
 
 //  Re-route to directory to download the file.
