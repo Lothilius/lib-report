@@ -9,7 +9,7 @@ import json
 
 current_time = datetime.datetime.now().strftime('%H_%M_%Y_%m_%d')
 
-
+print 'hello world!'
 #Create file from array with finaldata.csv as the name and append.
 def dataTofile(fname):
     with open(fname) as f:
@@ -115,14 +115,17 @@ missing_data = missing_data[missing_data[:, 5].argsort()]
 def main():
     # while True:
     try:
-        if sys.argv[1] == False:
+        if len(sys.argv) <= 1:
+            directory = 'inventory_report_'
+            arrayTofile(missing_data, directory)
+        elif sys.argv[1] == False:
             directory = raw_input('Where would you like to save the data? ')
             arrayTofile(missing_data, directory)
         else:
             directory = 'inventory_report_'
             arrayTofile(missing_data, directory)
     except TypeError as e:
-        print json.dumps({'error': sys.exc_info()[0] + ' ' + e})
+        print 'error', sys.exc_info()[0], e
 
 if __name__ == '__main__':
     main()
