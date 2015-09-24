@@ -101,7 +101,10 @@ for each in content:
                 try:
                     item = np.append(item[-2], item[-1] + each)
                 except IndexError:
-                    item = np.append(item, each)
+                    if each[:18] == '               Pro':
+                        pass
+                    else:
+                        item = np.append(item, each)
     else:
         item = np.append(item, each)
 
