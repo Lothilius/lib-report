@@ -10,7 +10,7 @@
     move_uploaded_file( $_FILES['uploadedfile']['tmp_name'], $target);
 
     $command = escapeshellcmd("python2.7 read.py $target");
-    passthru($command, $output);
+    $output = passthru($command);
     echo "<pre>";
     echo "something";
     echo $output;
