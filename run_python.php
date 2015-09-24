@@ -10,11 +10,11 @@
     move_uploaded_file( $_FILES['uploadedfile']['tmp_name'], $target);
 
     $command = escapeshellcmd("python2.7 read.py $target");
-    exec($command, $output, $code);
+    passthru($command, $output);
     echo "<pre>";
     echo "something";
     var_dump($output);
-    var_dump($code);
+//    var_dump($code);
     echo '<a href="'.$output[1].'">Download Report</a>';
     echo "</pre>";
 
