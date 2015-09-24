@@ -49,7 +49,7 @@ def arrayTofile(dataArray, fileName):
     if sys.argv[1] == False:
         fileName = 'reports/' + fileName + '_' + current_time + '.csv'
     else:
-        fileName = 'Out/' + fileName + '.csv'
+        fileName = 'Out/' + fileName + current_time + '.csv'
     print(fileName)
     with open(fileName, 'w+') as csvfile:
         linewriter = csv.writer(csvfile, delimiter=",")
