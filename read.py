@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 __author__ = 'Lothilius'
 
 import numpy as np
