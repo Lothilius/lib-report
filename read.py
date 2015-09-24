@@ -4,7 +4,7 @@ import numpy as np
 import csv
 import sys
 import datetime
-import string
+import json
 
 
 current_time = datetime.datetime.now().strftime('%H_%M_%Y_%m_%d')
@@ -50,7 +50,7 @@ def arrayTofile(dataArray, fileName):
         fileName = 'reports/' + fileName + '_' + current_time + '.csv'
     else:
         fileName = 'Out/' + fileName + current_time + '.csv'
-    print(fileName)
+    json.dumps('fileName')
     with open(fileName, 'w+') as csvfile:
         linewriter = csv.writer(csvfile, delimiter=",")
         for each in dataArray:
