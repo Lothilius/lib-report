@@ -12,7 +12,7 @@
     $command = escapeshellcmd("python2.7 read.py $target");
     $output = json_decode(shell_exec($command), true);
     echo "<pre>";
-    print_r($output['file']);
+    echo$output['file'];
     echo '<a href="'.$output.'">Download Report</a>';
     echo "</pre>";
 
