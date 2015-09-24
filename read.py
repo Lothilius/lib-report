@@ -121,9 +121,8 @@ def main():
         else:
             directory = 'inventory_report_'
             arrayTofile(missing_data, directory)
-
     except TypeError as e:
-        print 'error', sys.exc_info()[0], e
+        print json.dumps({'error': sys.exc_info()[0] + ' ' + e})
 
 if __name__ == '__main__':
     main()
