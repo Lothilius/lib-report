@@ -10,9 +10,9 @@
     move_uploaded_file( $_FILES['uploadedfile']['tmp_name'], $target);
 
     $command = escapeshellcmd("python2.7 read.py $target");
-    $output = shell_exec($command);
+    $output = json_decode(shell_exec($command), true);
     echo "<pre>";
-    print_r($output);
+    print_r($output['file']);
     echo '<a href="'.$output.'">Download Report</a>';
     echo "</pre>";
 
