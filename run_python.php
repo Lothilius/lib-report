@@ -12,8 +12,8 @@
     $command = escapeshellcmd("python2.7 read.py $target");
     $output = json_decode(shell_exec($command), true);
     echo "<pre>";
-    echo$output['file'];
-    echo '<a href="'.$output.'">Download Report</a>';
+    echo $output['file'];
+    echo '<a href="'.$output['file'].'">Download Report</a>';
     echo "</pre>";
 
 //  Re-route to directory to download the file.
