@@ -55,8 +55,11 @@ target/
 .idea
 test.py
 
+.DS_Store
+
 # Reports and folders
 reports/
 inventory*
-In/*
+In/
+Out/
 
