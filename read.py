@@ -11,7 +11,7 @@ import json
 
 current_time = datetime.datetime.now().strftime('%H_%M_%Y_%m_%d')
 
-print 'hello world!'
+print('hello world!')
 #Create file from array with finaldata.csv as the name and append.
 def dataTofile(fname):
     with open(fname) as f:
@@ -34,7 +34,7 @@ def prep_list(some_array):
         call_numbers = call_number[0].rstrip()
         ready_array.append(call_numbers)
     except TypeError as e:
-        print 'error', sys.exc_info()[0], e, ' ', call_numbers
+        print('error', sys.exc_info()[0], e, ' ', call_numbers)
 
     title = ' '.join(some_array[1].split())
     ready_array.append(title)
@@ -46,13 +46,13 @@ def prep_list(some_array):
     return ready_array
 
 
-#write an array to a file.
+# write an array to a file.
 def arrayTofile(dataArray, fileName):
-    if sys.argv[1] == False:
+    if not sys.argv[1]:
         fileName = 'reports/' + fileName + '_' + current_time + '.csv'
     else:
         fileName = 'Out/' + fileName + current_time + '.csv'
-    print fileName
+    print(fileName)
     with open(fileName, 'w+') as csvfile:
         linewriter = csv.writer(csvfile, delimiter=",")
         for each in dataArray:
@@ -65,7 +65,7 @@ file_name = sys.argv[1]
 content = dataTofile(file_name)
 #print content
 # for each in content:
-#     print [each]
+#     print([each])
 
 missing_data = np.array([[0, 0, 0, 0, 0, 0]])
 item = np.array([])
@@ -74,9 +74,11 @@ for each in content:
     if each == '\n':
         pass
     elif check_call_number(each):
-        if each[:18] == '               Pro':
+        if each[:20] == '                 Pro':
             pass
-        if each[:17] == '              Pro':
+        elif each[:21] == '                 Pro':
+            pass
+        elif each[:19] == '                 Pro':
             pass
         elif each[:9] == '      Per':
             pass
@@ -87,11 +89,11 @@ for each in content:
             # i = 0
             # for each in item:
             #     if each[:17] == '              Pro':
-            #         print each
+            #         print(each)
             #         item = np.delete(item, i)
             #     i = 1 + i
             #
-            # print item
+            # print(item)
 
             item = prep_list(item)
             missing_data = np.append(missing_data, [item], axis=0)
@@ -120,14 +122,14 @@ def main():
         if len(sys.argv) <= 1:
             directory = 'inventory_report_'
             arrayTofile(missing_data, directory)
-        elif sys.argv[1] == False:
-            directory = raw_input('Where would you like to save the data? ')
+        elif not sys.argv[1]:
+            directory = input('Where would you like to save the data? ')
             arrayTofile(missing_data, directory)
         else:
             directory = 'inventory_report_'
             arrayTofile(missing_data, directory)
     except TypeError as e:
-        print 'error', sys.exc_info()[0], e
+        print('error', sys.exc_info()[0], e)
 
 if __name__ == '__main__':
     main()
